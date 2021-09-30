@@ -37,7 +37,7 @@ export default StyleSheet.create({
 
   //CALENDAR DAY
   dateRootContainer: {
-    flex: 1,
+    // flex: 1,
   },
   dateContainer: {
     justifyContent: "center",
