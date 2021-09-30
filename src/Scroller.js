@@ -25,7 +25,9 @@ export default class CalendarScroller extends Component {
     onWeekScrollStart: PropTypes.func,
     onWeekScrollEnd: PropTypes.func,
     externalScrollView: PropTypes.func,
-    pagingEnabled: PropTypes.bool
+    pagingEnabled: PropTypes.bool,
+    customItemHeight: PropTypes.number,
+    customItemWidth: PropTypes.number,
   }
 
   static defaultProps = {
@@ -39,8 +41,9 @@ export default class CalendarScroller extends Component {
     this.timeoutResetPositionId = null;
 
     this.updateLayout = renderDayParams => {
+      const widthMultiplier = this.props.customItemWidth || 2
       const itemHeight = renderDayParams.height;
-      const itemWidth = renderDayParams.width + renderDayParams.marginHorizontal * 2;
+      const itemWidth = renderDayParams.width + renderDayParams.marginHorizontal * widthMultiplier;
 
       const layoutProvider = new LayoutProvider(
         index => 0, // only 1 view type
