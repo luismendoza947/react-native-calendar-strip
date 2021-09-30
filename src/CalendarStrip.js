@@ -95,6 +95,11 @@ class CalendarStrip extends Component {
     shouldAllowFontScaling: PropTypes.bool,
     useNativeDriver: PropTypes.bool,
     upperCaseDays: PropTypes.bool,
+
+    calendarDayFormat: PropTypes.string,
+
+    customItemHeight: PropTypes.number,
+    customItemWidth: PropTypes.number,
   };
 
   static defaultProps = {
@@ -451,6 +456,7 @@ class CalendarStrip extends Component {
       marginHorizontal: this.state.marginHorizontal,
       allowDayTextScaling: this.props.shouldAllowFontScaling,
       upperCaseDays: this.props.upperCaseDays,
+      calendarDayFormat: this.props.calendarDayFormat,
     }
   }
 
@@ -566,6 +572,8 @@ class CalendarStrip extends Component {
           onWeekScrollStart={this.props.onWeekScrollStart}
           onWeekScrollEnd={this.props.onWeekScrollEnd}
           externalScrollView={this.props.externalScrollView}
+          customItemHeight={this.props.customItemHeight}
+          customItemWidth={this.props.customItemWidth}
         />
       );
     }
