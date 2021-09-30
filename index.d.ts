@@ -56,6 +56,8 @@ interface IDayComponentProps {
   markedDatesStyle?: TextStyle;
   markedDates?: any[] | ((date: Moment) => void);
   upperCaseDays?: boolean;
+
+  calendarDayFormat?: string;
 }
 
 type TDaySelectionAnimation =
@@ -116,6 +118,8 @@ interface CalendarStripProps {
   calendarHeaderFormat?: string;
   calendarHeaderPosition?: "below" | "above";
 
+  calendarDayFormat?: string;
+
   calendarAnimation?: {
     duration: number;
     type: "sequence" | "parallel";
@@ -148,6 +152,9 @@ interface CalendarStripProps {
   headerText?: string;
 
   ref?: RefObject<any>;
+
+  customItemHeight?: number;
+  customItemWidth?: number;
 }
 
 export default class ReactNativeCalendarStrip extends Component<CalendarStripProps> {
